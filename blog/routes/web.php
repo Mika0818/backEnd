@@ -21,3 +21,9 @@ Route::get('/news', 'FrontController@news');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//  呼叫HomeController裡面的INDEX,去Controller裡面看
+
+Route::get('/home/news', 'NewsController@index');
+
+Route::POST('/home/news/store', 'NewsController@store');
+

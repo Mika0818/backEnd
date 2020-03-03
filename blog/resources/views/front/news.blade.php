@@ -1,4 +1,4 @@
-@extends('layout/nav')
+@extends('layouts/nav')
 @section('content')
 
 
@@ -9,8 +9,8 @@
 </section><section class="features3 cid-rRF3umTBWU" id="features3-7">
     <div class="container">
         <div class="media-container-row">
-            @foreach ($news_data as $item)
 
+            @foreach ($news_data as $item)
 
             <div class="card p-3 col-12 col-md-6 col-lg-4">
                 <div class="card-wrapper">

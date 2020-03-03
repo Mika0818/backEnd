@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
  use DB;
+//  1.匯入DB
 use Illuminate\Http\Request;
 
 class FrontController extends Controller

@@ -15,6 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // $fillable建立白名單
     protected $fillable = [
         'name', 'email', 'password',
     ];
