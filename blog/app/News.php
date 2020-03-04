@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $tabel=['news'];
+    protected $table = 'news';
+
     protected $fillable = [
-        'img', 'title', 'content',
+       'img','title', 'content' ,'sort'
     ];
 }

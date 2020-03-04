@@ -11,19 +11,27 @@
 |
 */
 
-use App\Http\Controllers\FrontController;
-
 Route::get('/', 'FrontController@index');
-
 
 Route::get('/news', 'FrontController@news');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-//  呼叫HomeController裡面的INDEX,去Controller裡面看
+Route::group(['middleware' => ['auth'],'prefix' => 'home' ], function () {
 
-Route::get('/home/news', 'NewsController@index');
+    //首頁
+    Route::get('/', 'HomeController@index');
 
-Route::POST('/home/news/store', 'NewsController@store');
 
+    //最新消息管理
+    Route::get('news', 'NewsController@index');
+
+    Route::get('news/create', 'NewsController@create');
+    Route::post('news/store', 'NewsController@store');
+
+    Route::get('news/edit/{id}', 'NewsController@edit');
+    Route::post('news/update/{id}', 'NewsController@update');
+
+    Route::post('news/delete/{id}', 'NewsController@delete');
+
+});

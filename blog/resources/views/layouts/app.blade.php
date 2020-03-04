@@ -9,15 +9,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -33,26 +32,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link " href="/home/news" >
-                              最新消息</a>
 
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/news">最新消息</a>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              安安 <span class="caret"></span>
+                                安安 <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="">
-                         我是下拉選單
+                                    我是下拉選單
                                 </a>
-
-
                             </div>
                         </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -95,5 +91,10 @@
             @yield('content')
         </main>
     </div>
+
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('js')
 </body>
 </html>
