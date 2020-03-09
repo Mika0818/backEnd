@@ -40,6 +40,31 @@ Route::group(['middleware' => ['auth'],'prefix' => 'home' ], function () {
 
     Route::post('ajax_delete_news_imgs', 'NewsController@ajax_delete_news_imgs');
 
+    // 產品管理
+
+    Route::get('products', 'ProductsController@index');
+
+    Route::get('products/create', 'ProductsController@create');
+    Route::post('products/store', 'ProductsController@store');
+
+    Route::get('products/edit/{id}', 'ProductsController@edit');
+    Route::post('products/update/{id}', 'ProductsController@update');
+
+    Route::post('products/delete/{id}', 'ProductsController@delete');
+
+
+    // 產品類型管理
+
+    Route::get('productType', 'ProductTypeController@index');
+
+    Route::get('productType/create', 'ProductTypeController@create');
+    Route::post('productType/store', 'ProductTypeController@store');
+
+    Route::get('productType/edit/{id}', 'ProductTypeController@edit');
+    Route::post('productType/update/{id}', 'ProductTypeController@update');
+
+    Route::post('productType/delete/{id}', 'ProductTypeController@delete');
+
 });
 
 
