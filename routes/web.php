@@ -20,6 +20,8 @@ Route::get('/', 'FrontController@index');
 Route::get('/news', 'FrontController@news'); //List Page
 Route::get('/news/{id}', 'FrontController@news_detail'); //Content Page
 
+Route::get('/contactUs', 'FrontController@contactUs');//聯絡我們
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth'],'prefix' => 'home' ], function () {
